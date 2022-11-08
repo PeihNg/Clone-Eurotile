@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>Eurotile</title>
+  </head>
+
+  <body class="auto" onload="loadPage()" style="margin: 0">
+    <div class="loadicon show" id="loader">
+      <svg
+        class="load-present"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 600 200"
+      >
+        <path
+          class="stroke-line"
+          d="M139.3,128.9H79.9c0.4,6.3,2.6,11.2,6.8,14.7c4.2,3.5,9.8,5.2,16.9,5.2c8.9,0,15.6-2.2,20.2-6.6l7.5,14.1
+c-6.8,5.3-17,7.9-30.6,7.9c-12.7,0-22.7-3.5-30.1-10.6c-7.4-7.1-11.1-16.9-11.1-29.6c0-12.5,4.1-22.6,12.2-30.3
+c8.1-7.7,17.8-11.6,29.2-11.6c12.1,0,21.7,3.4,29,10.3c7.3,6.9,11,15.6,11,26.2C140.9,120.9,140.4,124.3,139.3,128.9z M80.6,115
+h40.9c-1.3-11.6-8.1-17.4-20.2-17.4C90.2,97.6,83.3,103.4,80.6,115z"
+        />
+        <path
+          class="stroke-line"
+          d="M198.9,162.9v-6.7c-2.7,2.2-6.5,4.1-11.3,5.7s-9.2,2.4-13.3,2.4c-19.3,0-29-9.8-29-29.3V83.7h19.4v50
+c0,10.2,4.8,15.2,14.4,15.2c4.4,0,8.5-1.1,12.3-3.3c3.8-2.2,6.3-4.7,7.5-7.5V83.7h19.4v79.3H198.9z"
+        />
+        <path
+          class="stroke-line"
+          d="M276.3,100.9c-3.5-2.2-7.3-3.3-11.4-3.3c-4.5,0-8.5,1.9-12,5.8c-3.5,3.9-5.2,8.6-5.2,14.3v45.1h-19.4
+V83.7h19.4v7.2c5.4-5.8,12.7-8.7,21.7-8.7c6.6,0,11.7,1,15.2,2.9L276.3,100.9z"
+        />
+        <path
+          class="stroke-line"
+          d="M279.6,123.1c0-12.1,3.7-21.9,11-29.5c7.3-7.6,17-11.4,29-11.4c12.6,0,22.4,3.6,29.4,10.9
+c7,7.3,10.5,17.3,10.5,29.9c0,12.6-3.6,22.6-10.7,30.1c-7.1,7.4-16.9,11.2-29.2,11.2c-12.6,0-22.5-3.8-29.5-11.3
+C283.1,145.5,279.6,135.5,279.6,123.1z M299.8,123.1c0,17.4,6.6,26.2,19.8,26.2c6.1,0,10.9-2.3,14.4-6.8c3.5-4.5,5.3-11,5.3-19.4
+c0-17.2-6.6-25.8-19.7-25.8c-6.1,0-10.9,2.3-14.4,6.8C301.5,108.6,299.8,114.9,299.8,123.1z"
+        />
+        <path
+          class="stroke-line"
+          d="M378.7,62.3l11.8-4.3v19.6h20.3v10h-20.3v48.6c0,10.6,3,16.5,10.6,16.5c3.6,0,6-0.5,8-1.2l0.7,9.9
+c-2.6,1.2-6.6,2-11.6,2c-19,0-19.5-18.5-19.5-27.5V87.6h-12.1v-10h12.1V62.3z"
+        />
+        <path
+          class="stroke-line"
+          d="M420.9,62.7c-4.6,0-7.8-3.9-7.8-8.8c0-4.8,3.3-8.6,7.9-8.6c4.7,0,7.8,3.9,7.8,8.6
+C428.8,59.3,425.4,62.7,420.9,62.7z M426.9,161.6H415V77.5h11.9V161.6z"
+        />
+        <path class="stroke-line" d="M451,161.6h-11.9V38.2H451V161.6z" />
+        <path
+          class="stroke-line"
+          d="M518.7,158.1c-4.5,2.3-12.6,5.2-24.6,5.2c-22.8,0-36.5-17.3-36.5-42.4c0-26.4,13.8-45.4,34.9-45.4
+c24.1,0,30.3,23.8,30.3,38.4c0,2.9-0.1,5.1-0.3,7.1h-53.3c0.1,23.3,12.5,32.1,26.6,32.1c9.8,0,15.7-2.2,20.5-4.3L518.7,158.1z
+M511.1,111.5c0.1-11.4-4.3-26.2-19.7-26.2c-14.4,0-20.7,14.7-21.8,26.2H511.1z"
+        />
+        <path
+          class="stroke-line"
+          d="M537.8,87.6c-4.9,0-9-1.7-12.4-5.1c-3.4-3.4-5.1-7.6-5.1-12.4c0-4.9,1.7-9,5.1-12.4
+c3.4-3.4,7.6-5.1,12.4-5.1c4.8,0,9,1.7,12.4,5.1c3.4,3.4,5.1,7.6,5.1,12.4c0,4.9-1.7,9-5.1,12.4
+C546.8,85.9,542.6,87.6,537.8,87.6z M537.8,54.6c-4.3,0-7.9,1.5-11,4.5c-3,3-4.5,6.7-4.5,11c0,4.3,1.5,7.9,4.5,10.9
+c3,3,6.7,4.5,11,4.5c4.3,0,7.9-1.5,10.9-4.5s4.5-6.7,4.5-10.9c0-4.3-1.5-7.9-4.5-11C545.7,56.1,542.1,54.6,537.8,54.6z M546.3,81
+h-3.8l-2.4-5.4c-1.2-2.7-2.6-4-4-4h-2.1V81h-3.1V58.7h6.3c2.6,0,4.6,0.5,6,1.6c1.4,1.1,2.1,2.6,2.1,4.4c0,1.5-0.5,2.8-1.5,3.9
+c-1,1.1-2.4,1.8-4.2,2.2V71c1.2,0.3,2.5,1.6,3.7,4.1L546.3,81z M534.1,61.4V69h3.3c3.1,0,4.6-1.3,4.6-3.8c0-1.4-0.4-2.3-1.2-2.9
+c-0.8-0.6-2.1-0.9-3.9-0.9H534.1z"
+        />
+        <g class="loadicon-text show">
+          <path
+            d="M65.4,65.8h-4.1V44h4.1V65.8z M65.6,54.8L74.1,44h2.4l-7.3,9.3l7.9,12.5h-4.6L65.6,54.8z"
+          />
+          <path d="M83.4,65.8h-4.1V44h4.1V65.8z" />
+          <path
+            d="M92.9,64.3h10.7v1.4H88.8V44h14.6v1.4H92.9v8.4h10v1.4h-10V64.3z"
+          />
+          <path
+            d="M91.3,42.2l3.4-5.1h2.5l3.6,5.1h-1.5L96,38.5l-3.2,3.7H91.3z M94.1,69.9c0-0.5,0.2-1,0.6-1.4
+C95,68.2,95.5,68,96,68c0.5,0,1,0.2,1.4,0.6c0.4,0.4,0.6,0.9,0.6,1.4c0,0.5-0.2,1-0.6,1.4c-0.4,0.4-0.8,0.6-1.4,0.6
+c-0.5,0-1-0.2-1.4-0.6C94.3,70.9,94.1,70.5,94.1,69.9z"
+          />
+          <path d="M114.1,65.8H110V45.4h-4.3V44h12.8v1.4h-4.4V65.8z" />
+          <path d="M139.4,65.8h-4.1V45.4H131V44h12.8v1.4h-4.4V65.8z" />
+          <path
+            d="M163,65.8h-4.2l-2.3-5.7H149l-2.1,5.7l-2,0l8.9-22.4L163,65.8z M155.9,58.6l-3.2-8l-3.1,8L155.9,58.6z"
+          />
+          <path d="M155.5,37.1h2.8l-4.4,5.1h-1.5L155.5,37.1z" />
+          <path
+            d="M184.7,47.9l-1.2,0.9c-0.9-1.2-1.8-2.2-2.6-2.8c-1.1-0.8-2.3-1.2-3.6-1.2c-2.6,0-4.6,0.9-6,2.7
+c-1.4,1.8-2.1,4.3-2.1,7.5c0,2.7,0.6,4.9,1.9,6.7c1.4,2,3.2,3,5.6,3c1.6,0,3.1-0.4,4.4-1.3c1.3-0.8,2.3-2,2.9-3.5l1.4,0.7
+c-0.9,2-2.2,3.5-3.9,4.4c-1.5,0.9-3.4,1.3-5.6,1.3c-3.1,0-5.7-1.1-7.8-3.3c-2.2-2.2-3.3-4.9-3.3-7.9c0-3.4,1.1-6.3,3.3-8.5
+c2.2-2.2,4.9-3.3,8.2-3.3c1.7,0,3.3,0.4,4.7,1.2C182.5,45.4,183.7,46.5,184.7,47.9z"
+          />
+          <path
+            d="M214.5,55.1h4.1V63c-1.4,1.1-2.9,1.9-4.5,2.5c-1.6,0.6-3.3,0.9-5.1,0.9c-3.1,0-5.7-1.1-7.8-3.3
+c-2.2-2.2-3.3-4.9-3.3-7.9c0-3.4,1.1-6.3,3.3-8.5c2.2-2.2,4.9-3.3,8.2-3.3c1.7,0,3.3,0.4,4.7,1.2c1.5,0.8,2.7,1.9,3.7,3.3
+l-1.2,0.9c-0.9-1.2-1.8-2.2-2.6-2.8c-1.1-0.8-2.3-1.2-3.6-1.2c-2.6,0-4.6,0.9-6,2.7c-1.4,1.8-2.1,4.3-2.1,7.5c0,2.9,0.6,5.2,1.9,7
+c1.4,2,3.3,3,5.7,3c1,0,1.9-0.2,2.8-0.5c0.9-0.3,1.5-0.7,1.8-1.2V55.1z"
+          />
+          <path
+            d="M238.7,65.8h-4.2l-2.3-5.7h-7.5l-2.1,5.7l-2,0l8.9-22.4L238.7,65.8z M231.6,58.6l-3.2-8l-3.1,8
+L231.6,58.6z"
+          />
+          <path
+            d="M228.4,69.9c0-0.5,0.2-1,0.6-1.4c0.4-0.4,0.8-0.6,1.4-0.6c0.5,0,1,0.2,1.4,0.6c0.4,0.4,0.6,0.9,0.6,1.4
+c0,0.5-0.2,1-0.6,1.4c-0.4,0.4-0.8,0.6-1.4,0.6c-0.5,0-1-0.2-1.4-0.6C228.6,70.9,228.4,70.5,228.4,69.9z"
+          />
+          <path
+            d="M260.3,47.9l-1.2,0.9c-0.9-1.2-1.8-2.2-2.6-2.8c-1.1-0.8-2.3-1.2-3.6-1.2c-2.6,0-4.6,0.9-6,2.7
+c-1.4,1.8-2.1,4.3-2.1,7.5c0,2.7,0.6,4.9,1.9,6.7c1.4,2,3.2,3,5.6,3c1.6,0,3.1-0.4,4.4-1.3c1.3-0.8,2.3-2,2.9-3.5l1.4,0.7
+c-0.9,2-2.2,3.5-3.9,4.4c-1.5,0.9-3.4,1.3-5.6,1.3c-3.1,0-5.7-1.1-7.8-3.3c-2.2-2.2-3.3-4.9-3.3-7.9c0-3.4,1.1-6.3,3.3-8.5
+c2.2-2.2,4.9-3.3,8.2-3.3c1.7,0,3.3,0.4,4.7,1.2C258.1,45.4,259.4,46.5,260.3,47.9z"
+          />
+          <path
+            d="M267.8,65.8h-4.1V44h4.1v9.5h8.9V44h4.1v21.8h-4.1V55.3h-8.9V65.8z"
+          />
+          <path
+            d="M296.8,65.8V44h4.5l6.3,14.7l5.9-14.7h4.2v21.8h-4.1V48.2l-7.2,18.2L298.6,48l-0.1,17.8H296.8z"
+          />
+          <path
+            d="M327,64.3h10.7v1.4h-14.8V44h14.6v1.4H327v8.4h9.9v1.4H327V64.3z"
+          />
+          <path
+            d="M343.2,65.8h-1.8V44h3.6l11.4,15l0.1-15h1.8v21.8h-1.8l-13.2-17.4L343.2,65.8z"
+          />
+        </g>
+      </svg>
+    </div>
+    <div id="my-container">
+      <header class="header">
+        <div class="logo"></div>
+        <div class="right-header">
+          <div class="navigation">
+            <div class="nav">
+              <ul>
+                <li class="current" style="animation-delay: 0ms">
+                  <a class="link-home current" href="#">Trang chủ</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                  ></div>
+                </li>
+                <li style="animation-delay: 50ms">
+                  <a class="link-load" href="#">Tổng quan về Eurotile</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                    data-description="Eurotile"
+                  ></div>
+                </li>
+                <li style="animation-delay: 100ms">
+                  <a class="link-load" href="#">Tin tức và Sự kiện</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                    data-description="Eurotile"
+                  ></div>
+                </li>
+                <li style="animation-delay: 150ms">
+                  <a class="link-load" href="#">Sản phẩm</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                    data-description="Eurotile"
+                  ></div>
+                </li>
+                <li style="animation-delay: 200ms">
+                  <a class="link-load" href="#">Thư Viện</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                    data-description="Eurotile"
+                  ></div>
+                </li>
+                <li style="animation-delay: 250ms">
+                  <a class="link-load" href="#">Liên hệ</a>
+                  <div
+                    class="class-hidden link-change-url"
+                    data-title="Eurotile"
+                    data-description="Eurotile"
+                  ></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="fast-search link-load"> Tìm nhanh </a>
+          <button class="search" aria-label="search-button">Tìm kiếm...</button>
+          <div class="search-form">
+            <div class="form-row-search">
+              <form
+                onsubmit="return false;"
+                action="./demo.html"
+                class="search-id-form"
+                id="search"
+                method="get"
+              >
+                <input
+                  type="text"
+                  id="qsearch"
+                  name="qsearch"
+                  data-holder="Tìm kiếm..."
+                  value="Tìm kiếm..."
+                  data-default="Tìm kiếm..."
+                  aria-label="input"
+                />
+                <input
+                  type="hidden"
+                  id="defaultvalue"
+                  name="defaultvalue"
+                  value="Tìm kiếm..."
+                />
+                <input
+                  type="hidden"
+                  id="errorsearch"
+                  name="errorsearch"
+                  value="Từ khóa không được dưới 2 kí tự, vui lòng nhập lại từ khóa tìm kiếm!"
+                />
+                <input
+                  type="hidden"
+                  id="href_search"
+                  name="href_search"
+                  value="./demo.html"
+                />
+              </form>
+            </div>
+          </div>
+          <div class="language">
+            <form
+              id="change_lang"
+              enctype="multipart/form-data"
+              method="post"
+              action="#"
+            >
+              <ul>
+                <li>
+                  <button aria-label="language-button" onclick="onClick();">
+                    en
+                  </button>
+                </li>
+              </ul>
+              <input
+                type="hidden"
+                value=""
+                name="language_code"
+                id="language_code"
+              />
+              <input
+                id="changlanguage_redirect"
+                type="hidden"
+                value="#"
+                name="redirect"
+              />
+            </form>
+          </div>
+        </div>
+        <div class="nav-click"></div>
+      </header>
+      <div class="box-nav">
+        <ul>
+          <li class="">
+            <a href="#video" class="active dot" data-scroll="video"
+              >01
+              <span>Video</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="#image" class="dot" data-scroll="image"
+              >02
+              <span>Hình ảnh</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="#products" class="dot" data-scroll="products"
+              >03
+              <span>Sản phẩm mới</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="#project" class="dot" data-scroll="project"
+              >04
+              <span>Dự án</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="#news" class="dot" data-scroll="news"
+              >05
+              <span>Tin tức</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="#contact" class="dot" data-scroll="contact"
+              >06
+              <span>Liên hệ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section class="sec" id="video">
+        <div class="group-central show-text" data-name="video-home">
+          <div class="slider position-absolute">
+            <div class="control-youtube">
+              <button
+                class="play-button show"
+                id="Play"
+                aria-label="playvideo"
+              ></button>
+              <button
+                class="pause-button"
+                id="Pause"
+                aria-label="pausevideo"
+              ></button>
+            </div>
+          </div>
+          <div
+            class="youtube-video position-absolute d-flex justify-content-center"
+          >
+            <video
+              src="./videos/video-eurotile.mp4"
+              id="video-ytb"
+              muted
+            ></video>
+          </div>
+          <div class="control">
+            <button id="mute-btn" data-state="unmute"></button>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="image">
+        <div class="group-central group-central-2" data-name="banner-home">
+          <div class="slide-container">
+            <div class="slides">
+              <img src="./images/001-1.jpg" alt="" class="active" />
+              <img src="./images/moc-lan-zoom.jpg" alt="" />
+              <img src="./images/pc-moclan2.jpg" alt="" />
+              <img src="./images/hoa-da-zoom.jpg" alt="" />
+              <img src="./images/pc-hoada1.jpg" alt="" />
+              <img src="./images/an-nien-zoom.jpg" alt="" />
+              <img src="./images/pc-An-nien1.jpg" alt="" />
+              <img src="./images/an-cu-zoom.jpg" alt="" />
+              <img src="./images/pc-ancu3.jpg" alt="" />
+              <img src="./images/sa-thach-zoom.jpg" alt="" />
+              <img src="./images/5.jpg" alt="" />
+              <img src="./images/luu-thuy-zoom.jpg" alt="" />
+              <img src="./images/pc-luuthuy.jpg" alt="" />
+            </div>
+            <div class="slide-buttons">
+              <span class="next"></span>
+              <span class="prev"></span>
+            </div>
+            <div class="dotsContainer d-flex gap-2">
+              <div
+                class="dot active"
+                attr="0"
+                onclick="switchImage(this)"
+              ></div>
+              <div class="dot" attr="1" onclick="switchImage(this)"></div>
+              <div class="dot" attr="2" onclick="switchImage(this)"></div>
+              <div class="dot" attr="3" onclick="switchImage(this)"></div>
+              <div class="dot" attr="4" onclick="switchImage(this)"></div>
+              <div class="dot" attr="5" onclick="switchImage(this)"></div>
+              <div class="dot" attr="6" onclick="switchImage(this)"></div>
+              <div class="dot" attr="7" onclick="switchImage(this)"></div>
+              <div class="dot" attr="8" onclick="switchImage(this)"></div>
+              <div class="dot" attr="9" onclick="switchImage(this)"></div>
+              <div class="dot" attr="10" onclick="switchImage(this)"></div>
+              <div class="dot" attr="11" onclick="switchImage(this)"></div>
+              <div class="dot" attr="12" onclick="switchImage(this)"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="products">
+        <div class="group-central" data-name="product-home">
+          <div
+            class="bg-cover bg-screen blur-bg"
+            style="
+              background-image: url(https://www.eurotile.vn/pictures/catalog/background/bg-spmoi.jpg);
+            "
+          ></div>
+          <div class="content-main">
+            <div class="prev-btn"></div>
+            <div class="next-btn"></div>
+            <div class="slide-product slide-slidebox">
+              <div class="slides-container">
+                <div class="slide-image">
+                  <div class="pro-text">
+                    <div class="pro-bg-text">
+                      <div class="title-box">Sản Phẩm Mới</div>
+                      <h2><br /></h2>
+                      <p>
+                        Hạnh phúc là một hành trình chứ không phải điểm đến. Hãy
+                        sống thật tốt đẹp theo cách bạn muốn dù người khác có
+                        thể cho rằng nó viễn vông.
+                      </p>
+                      <a href="" class="button-border">chi tiết</a>
+                    </div>
+                  </div>
+                  <img src="./images/pc-vong-cat3.jpg" alt="" />
+                </div>
+                <div class="slide-image">
+                  <div class="pro-text">
+                    <div class="pro-bg-text">
+                      <div class="title-box">Sản Phẩm Mới</div>
+                      <h2>Lavar Volcano <strong>Hoa Đá</strong></h2>
+                      <p>
+                        Sự kết tinh của trời đất ngàn năm, núi lửa tuôn trào,
+                        những dòng dung nham tuôn trào như ngày khai nhụy nở
+                        hoa, một bông hoa rực rỡ, mãnh liệt và vô cùng nóng
+                        bỏng...
+                      </p>
+                      <a href="" class="button-border">chi tiết</a>
+                    </div>
+                  </div>
+                  <img src="./images/pc-hoada2.jpg" alt="" />
+                </div>
+                <div class="slide-image">
+                  <div class="pro-text">
+                    <div class="pro-bg-text">
+                      <div class="title-box">Sản Phẩm Mới</div>
+                      <h2>Switzerland wood <strong>Mộc Lan</strong></h2>
+                      <p>
+                        Mộc Lan, một loài hoa mang vẻ đẹp thuần khiết, mộc mạc
+                        tinh khôi, lãng mạn, quyến rũ nhưng vô cùng mạnh mẽ...
+                      </p>
+                      <a href="" class="button-border">chi tiết</a>
+                    </div>
+                  </div>
+                  <img src="./images/Moc-lan.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="navigation-dots d-flex gap-2"></div>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="project">
+        <div class="group-central" data-name="project-home">
+          <div
+            class="bg-cover bg-screen"
+            style="
+              background-image: url(https://www.eurotile.vn/pictures/catalog/background/bg-duan.jpg);
+            "
+          ></div>
+          <div class="content-main">
+            <div class="navigation-dots2 d-flex gap-2"></div>
+            <div class="container-library">
+              <div class="prev-btn-2"></div>
+              <div class="next-btn-2"></div>
+
+              <!-- slides container2 = slide wrapper/  -->
+              <div class="slide-library slide-slidebox">
+                <div class="slide-wrapper-outer">
+                  <div class="title-product">
+                    <h2>Dự án</h2>
+                  </div>
+                  <div class="slide-wrapper">
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/mom-da-chim-resort.jpg"
+                              alt="Mỏm Đá Chim - Lazi Beach Resort"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Mỏm Đá Chim - Lazi Beach Resort</h3>
+                            <div class="address">
+                              <div class="location-icon"></div>
+                              <p>Lagi, Bình Thuận / Mỹ Đức cung cấp: 8.000m2</p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href=""
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/EVN-tower-cua-bac.jpg"
+                              alt="Tòa nhà EVN Tower"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Tòa nhà EVN Tower</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                11 Cửa Bắc, Ba Đình, Hà Nội / Mỹ Đức cung cấp:
+                                10.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/Pacific-place1.jpg"
+                              alt="Tòa Nhà Pacific"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Tòa Nhà Pacific</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                83B Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội / Mỹ
+                                Đức cung cấp: 13.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/The-Garden-Ha-noi.jpg"
+                              alt="The Garden Hanoi"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>The Garden Hanoi</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                The Manor urban area, My Dinh Ward, Nam Tu Liem
+                                District, Hanoi / My Duc provided: 17,000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/manor-hn-5-14.jpg"
+                              alt="The Manor - Hà Nội"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>The Manor - Hà Nội</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                Đường Mễ Trì, Mỹ Đình 1, Nam Từ Liêm, Hà Nội Mỹ
+                                / Đức cung cấp: 24.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/can-ho-lotus-garden.jpg"
+                              alt="Tòa nhà Sen xanh - Lotus Garden"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Tòa nhà Sen xanh - Lotus Garden</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                36 Đường Trịnh Đình Thảo, phường Hòa Thạnh quận
+                                Tân Phú, TP.HCM / Mỹ Đức cung cấp: 23.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/phumyhung-riverside.jpg"
+                              alt="Phú Mỹ Hưng Riverside Residence P5"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Phú Mỹ Hưng Riverside Residence P5</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                KDC Phú Mỹ Hưng, Q.7, HCM / Mỹ Đức cung cấp:
+                                7.500m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/truogn-Dinh-thien-ly.jpg"
+                              alt="Trường THCS-THPT Đinh Thiện Lý"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Trường THCS-THPT Đinh Thiện Lý</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                80 Nguyễn Đức Cảnh, P. Tân Phong, Q.7, HCM / Mỹ
+                                Đức cung cấp: 4.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/sai-gon-pearl-school-1.jpg"
+                              alt="Trường Quốc tế Sài Gòn Pearl"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Trường Quốc tế Sài Gòn Pearl</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                92 Nguyễn Hữu Cảnh, P22, Q. Bình Thạnh, HCM / Mỹ
+                                Đức cung cấp: 4.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/nhietdien-ca-mau.jpg"
+                              alt="Nhà máy nhiệt điện Cà Mau"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Nhà máy nhiệt điện Cà Mau</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                TP. Cà Mau, Tỉnh Cà Mau / Mỹ Đức cung cấp:
+                                8.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/Ciputraclubbanner.jpg"
+                              alt="GOLF CIPUTRA CLUB"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>GOLF CIPUTRA CLUB</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>Mỹ Đức cung cấp: 1.200m2</p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item select-album">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/con-dao-resort-3.jpg"
+                              alt="Khu du lịch Sài Gòn - Côn Đảo"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>Khu du lịch Sài Gòn - Côn Đảo</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>Côn Đảo / Mỹ Đức cung cấp: 6.500m2</p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item">
+                      <div class="item-library">
+                        <div class="box-project">
+                          <div class="pic-project">
+                            <img
+                              src="https://www.eurotile.vn/pictures/catalog/projects/Sokha-Beach-Resort.jpg"
+                              alt="SOKHA BEACH RESORT"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div class="name-library">
+                            <h3>SOKHA BEACH RESORT</h3>
+                            <div class="address">
+                              <span class="location-icon"></span>
+                              <p>
+                                Street 2 Thnou, Sangkat 4, Sihanoukville,
+                                Cambodia / Mỹ Đức cung cấp: 10.000m2
+                              </p>
+                            </div>
+                          </div>
+                          <a
+                            class="view-project"
+                            href="#"
+                            aria-label="link-project"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="news">
+        <div class="group-central" data-name="news-home">
+          <div
+            class="bg-cover bg-screen blur-bg"
+            style="
+              background-image: url(https://www.eurotile.vn/pictures/catalog/background/bg-news.jpg);
+            "
+          ></div>
+          <div class="content-main">
+            <div class="content-news">
+              <div class="box-rotate">
+                <h2>Tin Mới</h2>
+              </div>
+              <div class="news-home">
+                <div class="item-news">
+                  <a href="#" class="box-item">
+                    <div
+                      class="news-pic"
+                      style="
+                        background-image: url(https://www.eurotile.vn/pictures/catalog/KT5.jpg);
+                      "
+                    >
+                      <div class="title-box">Tin DỰ ÁN</div>
+                    </div>
+                    <div class="news-text-home">
+                      <h3>Gạch vân đá – Chất liệu kiến tạo không gian sống</h3>
+                      <p>Khởi đầu của một vật liệu thay thế</p>
+                      <span>[...]</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="item-news">
+                  <a href="#" class="box-item"
+                    ><div
+                      class="news-pic"
+                      style="
+                        background-image: url(https://www.eurotile.vn/pictures/catalog/tintuc/2022/su-kien-clb-kien-truc-su-tai-dad-180922/z3730681853782548c1f66ec4534bb3fe5030103ca8a7b.jpg);
+                      "
+                    ></div>
+                    <div class="news-text-home">
+                      <h3>
+                        Viglacera - Eurotile tài trợ Lễ Ra Mắt Ban Điều Hành CLB
+                        Kiến Trúc Sư Trẻ vùng Nam Trung Bộ và Tây Nguyên
+                      </h3>
+                      <p>
+                        Ngày 17 &amp;18/09/2022 tại thành phố biển Đà Nẵng xinh
+                        đẹp đã diễn ra sự kiện Lễ Ra Mắt Ban Điều Hành CLB kiến
+                        trúc sư trẻ vùng Nam Trung Bộ và Tây Nguyên. Viglacera-
+                        Eurotile hân hạnh đồng hành là NHÀ TÀI TRỢ KIM CƯƠNG cho
+                        sự kiện lần này với mục tiêu chia sẻ và hỗ trợ cho sự
+                        nghiệp phát triển lớn mạnh của ngành kiến trúc trẻ Việt
+                        Nam.
+                      </p>
+                      <span>[...]</span>
+                    </div></a
+                  >
+                </div>
+                <div class="item-news">
+                  <a
+                    href="https://www.eurotile.vn/vi/tin-tuc/cong-ty/eurotile-ky-hop-tac-cung-phat-trien-voi-cong-ty-tnhh-dau-tu-ngoc-y.html"
+                    class="box-item"
+                    ><div
+                      class="news-pic"
+                      style="
+                        background-image: url(https://www.eurotile.vn/pictures/catalog/tintuc/2022/hop-tac-ki-ket-ec-ngoc-y-hcm/z363220325350683030e4542cf26819b2ed19e5e384122.jpg);
+                      "
+                    ></div>
+                    <div class="news-text-home">
+                      <h3>
+                        EUROTILE KÝ HỢP TÁC CÙNG PHÁT TRIỂN VỚI CÔNG TY TNHH ĐẦU
+                        TƯ NGỌC Ý
+                      </h3>
+                      <p>
+                        Eurotile vừa chính thức công bố ký kết hợp tác cùng phát
+                        triển với Công Ty TNHH đầu tư Ngọc ý nhằm phát huy thế
+                        mạnh trên các lĩnh vực hoạt động của hai bên, thúc đẩy
+                        kết nối, cùng nhau hướng đến sự phát triển lâu dài và
+                        bền vững.
+                      </p>
+                      <span>[...]</span>
+                    </div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="contact">
+        <div class="group-central" data-name="contact-home">
+          <div
+            class="bg-cover bg-screen"
+            style="
+              background-image: url(https://www.eurotile.vn/pictures/catalog/background/antique-desk-dial-47319.jpg);
+            "
+          ></div>
+          <div class="content-main">
+            <div class="contact-home-container">
+              <div class="info-contact-home">
+                <h3>Eurotile</h3>
+                <ul class="company-info">
+                  <li class="bt-location">
+                    <p>433 Cộng Hòa, P.15, Q.Tân Bình, TP.HCM</p>
+                  </li>
+                  <li class="bt-phone">
+                    <a href="tel:0902.798.538">0902.798.538</a>
+                  </li>
+                  <li class="bt-email">
+                    <p>
+                      <button aria-label="email-icon" class="show-contact">
+                        tuvanthietke@eurotile.vn
+                      </button>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="map-box" id="_no-clickjacking-0">
+                <div id="map-canvas" class="already">
+                  <iframe
+                    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.086927478105!2d106.63474751508019!3d10.804654092302416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a69b4b385%3A0xe0b01019b76919fc!2sEUROTILE%20CENTER%20S%C3%A0i%20G%C3%B2n!5e0!3m2!1svi!2s!4v1639112797670!5m2!1svi!2s"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    title="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.086927478105!2d106.63474751508019!3d10.804654092302416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a69b4b385%3A0xe0b01019b76919fc!2sEUROTILE%20CENTER%20S%C3%A0i%20G%C3%B2n!5e0!3m2!1svi!2s!4v1639112797670!5m2!1svi!2s"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="footer">
+        <div class="contact-footer">
+          <a href="#" class="link-load sitemap-icon" aria-label="sitemap"
+            >Site map</a
+          >
+          <a href="tel:0902798538">hotline: 0902.798.538</a>
+          <button aria-label="email-icon" class="show-contact">
+            <i class="icon-email"></i> tuvanthietke@eurotile.vn
+          </button>
+        </div>
+        <div class="social">
+          <ul>
+            <li>
+              <a
+                class="facebook"
+                href="https://www.facebook.com/eurotile.vn/"
+                target="_blank"
+                rel="noopener"
+                aria-label="link-social"
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                  <path
+                    fill="currentColor"
+                    d="M36.5,24.5h-5v-3.3c0-1.2,0.8-1.5,1.4-1.5s3.5,0,3.5,0v-5.4l-4.9,0c-5.4,0-6.7,4.1-6.7,6.7v3.6h-3.1v5.6h3.1
+c0,7.2,0,15.9,0,15.9h6.6c0,0,0-8.8,0-15.9h4.4L36.5,24.5z"
+                  ></path>
+                  <ellipse
+                    stroke="currentColor"
+                    class="foreground"
+                    cx="30"
+                    cy="30"
+                    rx="26"
+                    ry="26"
+                  ></ellipse>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="youtube"
+                href="https://www.youtube.com/channel/UCs4n8p1fs-x2BMaAvqBccag"
+                target="_blank"
+                rel="noopener"
+                aria-label="link-social"
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                  <path
+                    fill="currentColor"
+                    d="M43.5,22.8c0-0.1,0-0.2-0.1-0.3c0,0,0-0.1,0-0.1c-0.4-1.1-1.4-1.9-2.7-1.9h0.2c0,0-5-0.8-11.7-0.8
+c-6.7,0-11.7,0.8-11.7,0.8h0.2c-1.3,0-2.3,0.8-2.7,1.9c0,0,0,0.1-0.1,0.1c0,0.1-0.1,0.2-0.1,0.3c-0.2,1.3-0.5,3.9-0.5,7
+c0,3.1,0.3,5.7,0.5,7c0,0.1,0,0.2,0.1,0.3c0,0,0,0.1,0.1,0.2c0.4,1.1,1.4,1.9,2.7,1.9h-0.2c0,0,5,0.8,11.7,0.8
+c6.7,0,11.7-0.8,11.7-0.8h-0.2c1.3,0,2.3-0.8,2.7-1.9c0,0,0-0.1,0-0.2c0-0.1,0-0.2,0.1-0.3c0.2-1.3,0.5-3.9,0.5-7
+C44,26.7,43.7,24.1,43.5,22.8z M33.5,30.5l-6,4.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.2,0-0.3-0.1c-0.2-0.1-0.4-0.4-0.4-0.6v-8.7
+c0-0.3,0.1-0.5,0.4-0.6c0.2-0.1,0.5-0.1,0.8,0.1l6,4.4c0.2,0.1,0.3,0.4,0.3,0.6C33.8,30.1,33.7,30.3,33.5,30.5z"
+                  ></path>
+                  <ellipse
+                    stroke="currentColor"
+                    class="foreground"
+                    cx="30"
+                    cy="30"
+                    rx="26"
+                    ry="26"
+                  ></ellipse>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="instagram"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="link-social"
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                  <path
+                    fill="currentColor"
+                    d="M30,22c-4.4,0-8,3.6-8,8c0,4.4,3.6,8,8,8c4.4,0,8-3.6,8-8C38,25.6,34.4,22,30,22L30,22z M30,35.2c-2.9,0-5.2-2.3-5.2-5.2
+s2.3-5.2,5.2-5.2s5.2,2.3,5.2,5.2C35.2,32.9,32.9,35.2,30,35.2z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    d="M36.4,14.5c-2.9-0.1-10-0.1-12.8,0c-2.5,0.1-4.7,0.7-6.5,2.5c-3,3-2.6,7-2.6,13c0,6.1-0.3,10,2.6,13c3,3,7.1,2.6,13,2.6
+c6,0,8.1,0,10.2-0.8c2.9-1.1,5.1-3.7,5.3-8.3c0.1-2.9,0.1-10,0-12.8C45.2,18.1,42.3,14.8,36.4,14.5L36.4,14.5z M41,41
+c-2,2-4.7,1.8-11,1.8c-6.5,0-9.1,0.1-11-1.8c-2.2-2.2-1.8-5.7-1.8-11c0-7.2-0.7-12.3,6.5-12.7c1.7-0.1,2.1-0.1,6.3-0.1l0.1,0
+c6.9,0,12.3-0.7,12.7,6.5c0.1,1.6,0.1,2.1,0.1,6.3C42.8,36.4,42.9,39,41,41L41,41z"
+                  ></path>
+                  <ellipse
+                    stroke="currentColor"
+                    class="foreground"
+                    cx="30"
+                    cy="30"
+                    rx="26"
+                    ry="26"
+                  ></ellipse>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="pinterest"
+                href="https://www.pinterest.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="link-social"
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+                  <path
+                    fill="currentColor"
+                    d="M30.8,14.5c-8.8,0-13.2,6.1-13.2,11.1c0,3.1,1.2,5.8,3.8,6.8c0.4,0.2,0.8,0,0.9-0.4l0.4-1.4
+c0.1-0.4,0.1-0.6-0.3-1c-0.7-0.8-1.2-1.9-1.2-3.5c0-4.5,3.5-8.5,9.1-8.5c4.9,0,7.7,2.9,7.7,6.8c0,5.1-2.4,9.5-5.8,9.5
+c-1.9,0-3.4-1.5-2.9-3.4c0.6-2.3,1.6-4.7,1.6-6.3c0-1.5-0.8-2.7-2.5-2.7c-2,0-3.6,2-3.6,4.6c0,1.7,0.6,2.8,0.6,2.8L23,38.6
+c-0.7,2.9-0.1,6.4-0.1,6.8c0,0.2,0.3,0.3,0.4,0.1c0.2-0.2,2.5-3,3.3-5.8c0.2-0.8,1.3-4.9,1.3-4.9c0.6,1.2,2.5,2.2,4.5,2.2
+c5.9,0,9.9-5.2,9.9-12.2C42.4,19.4,37.8,14.5,30.8,14.5z"
+                  ></path>
+                  <ellipse
+                    stroke="currentColor"
+                    class="foreground"
+                    cx="30"
+                    cy="30"
+                    rx="26"
+                    ry="26"
+                  ></ellipse>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>2018 <strong>Eurotile</strong>. All Rights Reserved.</p>
+        </div>
+      </div>
+      <div class="wheel show"></div>
+      <div class="go-top"></div>
+      <div class="overlay-menu"></div>
+    </div>
+
+    <script></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      charset="utf-8"
+    ></script>
+  </body>
+
+  <script src="./js/app.js"></script>
+</html>
